@@ -10,14 +10,14 @@ soup = BeautifulSoup(txt, 'html.parser')
 prelines = soup.text.strip()
 #Add text to list
 lines = prelines.split()
-
+#Pull out top and registered domains
 domains = []
 for line in lines:
     domain = tldextract.extract(line)
     domains.append(domain.subdomain + domain.registered_domain)
 
 print(domains)
-
+#remove blank lines
 domains_formated = list(filter(None, domains))
 
 fn = "cybercrimetracker.txt"
