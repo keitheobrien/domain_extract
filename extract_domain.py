@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import tldextract
 from bs4 import BeautifulSoup
 import requests
