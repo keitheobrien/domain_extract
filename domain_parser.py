@@ -17,6 +17,7 @@ for index, url in enumerate(urls, start=0):
         match = re.search(r'\b((xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}\b', line)
         if match:
             domains.append(match.group())
+
     fn = output[index]
     f = open(fn, 'w')
     print('Writing {l} \n'.format(l=fn))
