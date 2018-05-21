@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 import requests
 import re
+
 # urls list containts the urls of the threat intel site that list the malicous domains
 # output list is the files that should be written to for each threat intel site
-
 urls = ['http://cybercrime-tracker.net/all.php', 'http://mirror1.malwaredomains.com/files/domains.txt', 'http://malc0de.com/bl/ZONES']
 output = ['cybercrimetracker.txt', 'malwaredomains.txt', 'malcode.txt']
 
