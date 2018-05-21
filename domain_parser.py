@@ -4,8 +4,8 @@ import re
 
 # urls list containts the urls of the threat intel site that list the malicous domains
 # output list is the files that should be written to for each threat intel site
-urls = ['http://cybercrime-tracker.net/all.php', 'http://mirror1.malwaredomains.com/files/domains.txt', 'http://malc0de.com/bl/ZONES', 'https://urlhaus.abuse.ch/downloads/text/']
-output = ['cybercrimetracker.txt', 'malwaredomains.txt', 'malcode.txt', 'urlhaus.txt']
+urls = ['http://cybercrime-tracker.net/all.php', 'http://mirror1.malwaredomains.com/files/domains.txt', 'http://malc0de.com/bl/ZONES', 'https://urlhaus.abuse.ch/downloads/text/', 'http://osint.bambenekconsulting.com/feeds/c2-dommasterlist-high.txt']
+output = ['cybercrimetracker.txt', 'malwaredomains.txt', 'malcode.txt', 'urlhaus.txt', 'c2-dommasterlist-high.txt']
 
 for index, url in enumerate(urls, start=0):
     print('Getting {t}'.format(t=url))
@@ -22,7 +22,7 @@ for index, url in enumerate(urls, start=0):
     f = open(fn, 'w')
     print('Writing {l} \n'.format(l=fn))
     for line in domains:
-        if 'malc0de.com' not in line and 'www.malwaredomains.com' not in line:
+        if 'malc0de.com' not in line and 'www.malwaredomains.com' and 'bambenekconsulting.com' not in line:
             print(line, file=f)
     f.close()
 
