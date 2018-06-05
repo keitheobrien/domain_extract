@@ -22,7 +22,7 @@ for index, url in enumerate(urls, start=0):
     f = open(fn, 'w')
     print('Writing {l} \n'.format(l=fn))
     for line in domains:
-        if 'malc0de.com' not in line and 'www.malwaredomains.com' and 'bambenekconsulting.com' not in line:
+        if 'malc0de.com' and 'www.malwaredomains.com' and 'bambenekconsulting.com' not in line:
             print(line, file=f)
     f.close()
 
